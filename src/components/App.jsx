@@ -1,25 +1,22 @@
-import { NavLink, Route, Routes } from 'react-router-dom';
-import Movies from 'pages/Home';
-import Search from 'pages/Search';
-import Trending from 'pages/Trending';
+import { Route, Routes } from 'react-router-dom';
+import Home from 'pages/Home/Home';
+import Movies from 'pages/Movies/Movies';
+import MovieDetails from 'pages/MovieDetails/MovieDetails';
+import { Layout } from './Layout';
+import { MovieList } from './MovieList';
+import { Cast } from './Cast';
 
 
 export const App = () => {
   return (
-    <div>
-      <nav>
-        <li>
-          <NavLink to="/">Домашняя</NavLink>
-        </li>
-        <li>
-          <NavLink to="/films">Коллекция</NavLink>
-        </li>
-      </nav>
       <Routes>
-        <Route path="/" element={<Movies/>} />
-        <Route path="/films" element={<Search />} />
-        <Route path="/films/:filmId" element={<Trending/>} />
+        <Route path="/" element={<Layout/> }>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+        <Route path="movies/:movieId" element={<MovieDetails />} />
+        <Route path="cast" element={<Cast />} />
+        <Route path="gallery" element={<MovieList />} />
+        </Route>
       </Routes>
-    </div>
   );
 };
