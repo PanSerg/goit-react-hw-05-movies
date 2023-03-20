@@ -1,7 +1,7 @@
 import { useParams, useLocation, Link } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { fetchMovieById } from "services/api";
-import { Image, MovieCard, Meta, Title } from '';
+// import { Image, MovieCard, Meta, Title } from '';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -29,8 +29,8 @@ const MovieDetails = () => {
       <div>
         <div to={backLinkHref.current}>Go back</div>
         <section>
-          <MovieCard>
-            <Image
+          <div>
+            <img
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w300/${poster_path}`
@@ -39,15 +39,15 @@ const MovieDetails = () => {
               alt={`${title}`}
             />
 
-            <Meta>
-              <Title>{`${title} ${year}`}</Title>
+            <div>
+              <div>{`${title} ${year}`}</div>
               <p>Use Score: {`${Math.round(vote_average * 10)}`}%</p>
               <h3>Overview</h3>
               <p>{`${overview}`}</p>
               <h3>Genres</h3>
               {genres && <p>{genres.map(name => name).join(' ')}</p>}
-            </Meta>
-          </MovieCard>
+            </div>
+          </div>
         </section>
         <section>
           <h3>Addition information</h3>
