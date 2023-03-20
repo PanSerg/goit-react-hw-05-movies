@@ -7,7 +7,7 @@ axios.defaults.params = {
 
 export async function fetchTrending() {
     const response = await axios.get(`/trending/movie/day`);
-    return response.date.results;
+    return response.data.results;
 };
 
 export async function fetchMovieByName(query) {
