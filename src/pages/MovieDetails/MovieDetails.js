@@ -11,7 +11,7 @@ const MovieDetails = () => {
 
   const { poster_path, title, vote_average, overview, release_date, genres } =
     movie;
-  const year = new Date(release_date);
+  const year = new Date(release_date).getFullYear();
    
     useEffect(() => {
       async function getMovieDetails() {
@@ -38,7 +38,11 @@ const MovieDetails = () => {
             
             <Meta>
               <Title>{`${title} ${year}`}</Title>
-              <p></p>
+              <p>Use Score: {`${Math.round(vote_average * 10)}`}%</p>
+              <h3>Overview</h3>
+              <p>{`${overview}`}</p>
+              <he>Genres</he>
+              {genres && <p>{genres.map((name) => name).join(' ')}</p>}
             </Meta>
           </MovieCard>
         </section>

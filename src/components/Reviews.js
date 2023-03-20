@@ -4,3 +4,4 @@ export const Reviews = () => {
     const { filmId } = useParams();
     return <div>Gallery films: {filmId}</div>
 }
+
