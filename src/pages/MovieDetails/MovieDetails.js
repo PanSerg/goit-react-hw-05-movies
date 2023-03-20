@@ -21,7 +21,8 @@ const MovieDetails = () => {
         } catch (error) {
           console.log('error', error);
           }
-        }
+      }
+      getMovieDetails();
        }, [movieId]);
 
     return (
