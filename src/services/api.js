@@ -15,3 +15,19 @@ export async function fetchMovieByName(query) {
     return response.data.results;
 };
 
+export async function fetchMovieById(id) {
+    const response = await axios.get(`/movie/${id}`);
+    return response.data;
+};
+
+export async function fetchMovieCast(id) {
+    const response = await axios.get(`/movie/${id}/credits`);
+    const cast = response.data.cast;
+    return cast;
+};
+
+export async function fetchMovieReviews(id) {
+    const response = await axios.get(`/movie/${id}/reviews`);
+    const cast = response.data.results;
+    return cast;
+}

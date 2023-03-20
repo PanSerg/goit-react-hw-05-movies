@@ -1,28 +1,28 @@
-import { Outlet, useParams } from "react-router-dom";
-import { useEffect, useState, Link } from "react";
+import { useParams, useLocation } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
 
 const MovieDetails = () => {
-    const {filmId} = useParams();
+  const [movie, setMovie] = useState([]);
+  const { movieId } = useParams();
+  const location = useLocation();
+  const backLinkRef = useRef(location.state?.from ?? '/');
    
     useEffect(() => {
         // useState()
         // isLoading
         // Error
-       }, []);
+       }, [movieId]);
 
     return (
-      <>
-        <h1> Trending: {filmId}</h1>
-        <ul>
-          <li>
-            <Link t0="subbreds">Жанры</Link>
-          </li>
-          <li>
-            <Link to="gallery">Галерея</Link>
-          </li>
-            </ul>
-            <Outlet/>
-      </>
+      <div>
+        <div to={backLinkRef.current}>Go back</div>
+        <section>
+          <div>
+            {/* <img src={ } alt={ } /> */}
+          </div>
+        </section>
+        
+      </div>
     );
 };
 
