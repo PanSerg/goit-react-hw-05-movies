@@ -1,8 +1,7 @@
 import { useParams, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { fetchMovieById } from "services/api";
-import { MovieCard } from '';
-import { Image } from '';
+import { Image, MovieCard, Meta, Title } from '';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -12,6 +11,7 @@ const MovieDetails = () => {
 
   const { poster_path, title, vote_average, overview, release_date, genres } =
     movie;
+  const year = new Date(release_date);
    
     useEffect(() => {
       async function getMovieDetails() {
@@ -35,6 +35,11 @@ const MovieDetails = () => {
               ? `https://image.tmdb.org/t/p/w300/${poster_path}`
               : `https://via.placeholder.com/250x375`}
               alt={`${title}`} />
+            
+            <Meta>
+              <Title>{`${title} ${year}`}</Title>
+              <p></p>
+            </Meta>
           </MovieCard>
         </section>
         

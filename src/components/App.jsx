@@ -3,7 +3,7 @@ import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import { Layout } from './Layout';
-import { MovieList } from './MovieList';
+import { Reviews } from './Reviews';
 import { Cast } from './Cast';
 
 
@@ -15,7 +15,7 @@ export const App = () => {
           <Route path="movies" element={<Movies />} />
         <Route path="movies/:movieId" element={<MovieDetails />} />
         <Route path="cast" element={<Cast />} />
-        <Route path="gallery" element={<MovieList />} />
+        <Route path="reviews" element={<Reviews />} />
         </Route>
       </Routes>
   );
