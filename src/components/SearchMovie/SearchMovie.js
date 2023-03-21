@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import { BiSearchAlt } from 'react-icons/bi';
 import PropTypes from 'prop-types';
-import { SearchForm } from "./Search.styled";
+import { SearchForm, SearchInput } from "./Search.styled";
 
 export function SearchMovie({ handleSearchInput }) {
   return (
@@ -16,13 +16,13 @@ export function SearchMovie({ handleSearchInput }) {
         }}
       >
         <SearchForm>
-          <div
+          <SearchInput
             type="text"
             name="input"
-            autocomplete="off"
-            autofocus
+            autoComplete="off"
+            autoFocus
             placeholder="Search movie"
-          ></div>{' '}
+          ></SearchInput>{' '}
           <button type="submit">
             <BiSearchAlt />
           </button>

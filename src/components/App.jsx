@@ -2,7 +2,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import Home from 'pages/Home/Home';
 import Movies from 'pages/Movies/Movies';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
-import { Layout } from './Layout';
+import { Layout } from './Layout/Layout';
 import { Reviews } from './Reviews';
 import { Cast } from './Cast';
 

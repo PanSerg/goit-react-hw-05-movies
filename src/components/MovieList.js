@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 
 export const MovieList = ({ movieList, linkTo }) => {
@@ -10,9 +10,9 @@ export const MovieList = ({ movieList, linkTo }) => {
         <div>
             {movieList.map(({ title, id }) => (
                 <li key={id}>
-                    <div to={`${linkTo ?? ''}${id}`} state={{ from: location }}>
+                    <Link to={`${linkTo ?? ''}${id}`} state={{ from: location }}>
                         {title}
-                    </div>
+                    </Link>
                 </li>
             ))}
         </div>
