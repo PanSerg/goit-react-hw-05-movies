@@ -60,7 +60,7 @@ const MovieDetails = () => {
             <Link to="cast">Cast</Link>
           </li>
           <li>
-            <Link to="review">Review</Link>
+            <Link to="reviews">Reviews</Link>
           </li>
         </ul>
       </Section>
