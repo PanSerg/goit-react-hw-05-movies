@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMovieByName } from 'services/api';
+import { MovieList } from 'components/MovieList';
+import { SearchMovie } from 'components/SearchMovie/SearchMovie';
+import { Wrapper } from 'components/Wrapper.styled';
 
 const Movies = () => {
     const [movieList, setMovieList] = useState([]);
@@ -22,10 +25,10 @@ const Movies = () => {
     }
 
     return (
-        <div>
-            <span handleSearchInput={handleSearchInput}></span>
-            <span movieList={movieList}></span>
-        </div>
+        <Wrapper>
+            <SearchMovie handleSearchInput={handleSearchInput}></SearchMovie>
+            <MovieList movieList={movieList}/>
+        </Wrapper>
     );
 };
 

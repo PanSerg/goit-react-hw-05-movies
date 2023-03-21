@@ -1,22 +1,20 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export const Layout = () => {
     return (
       <div>
         <header>
           <ul>
-            <li>
-              <NavLink to="/">Домашняя</NavLink>
+            <li to="/" end="true">
+              Home
             </li>
-            <li>
-              <NavLink to="/films">Коллекция</NavLink>
-            </li>
+            <li to="/movies">Movies</li>
           </ul>
         </header>
+
         <main>
           <Outlet />
             </main>
-            <footer>Footer</footer>
       </div>
     );
 };

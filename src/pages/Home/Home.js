@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchTrending } from 'services/api';
 import { MovieList } from 'components/MovieList';
 import { Title } from './Home.styled';
+import { Wrapper } from 'components/Wrapper.styled';
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
@@ -19,10 +20,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <Wrapper>
       <Title>Trending today</Title>
       <MovieList movieList={movieList} linkTo="movies/" />
-    </div>
+    </Wrapper>
   );
 };
 

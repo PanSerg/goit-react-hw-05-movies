@@ -6,6 +6,10 @@ export const Section = styled.div`
     border-top: 2px solid #888;
 `;
 
+export const MovieCard = styled.div`
+    display: flex;
+`;
+
 export const Title = styled.h3`
     margin: 0;
     font-size: 22px;
