@@ -11,6 +11,9 @@ const Movies = () => {
     
     useEffect(() => {
         const query = searchQuery.get('query');
+        if (!query) {
+            return;
+        }
         async function getFilmsByName() {
             const filmsByName = await fetchMovieByName(query);
             setMovieList(filmsByName);

@@ -11,7 +11,7 @@ export function SearchMovie({ handleSearchInput }) {
         initialValues={{ input: '' }}
         onSubmit={({ input }, { resetForm }) => {
           if (input.trim() === '') return;
-          handleSearchInput();
+          handleSearchInput(input);
           resetForm();
         }}
       >
