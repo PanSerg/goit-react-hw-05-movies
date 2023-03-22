@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { fetchMovieCast } from "services/api";
 import PropTypes from 'prop-types';
+import { fetchMovieCast } from "services/api";
+import { ReviewSec } from "./Reviews.styled";
 
 export function Reviews() {
     const { movieId } = useParams();
@@ -20,18 +21,18 @@ export function Reviews() {
             {!reviews.length ? (
                 <p>We don`t have any reviews for this movie</p>
             ) : (
-                <div>
+                <ReviewSec>
                     {reviews.map(({ author, id, content }) => (
                         <li key={id}>
                             <h3>Author: {author}</h3>
                             <p>{content}</p>
                         </li>
                     ))}
-                </div>
+                </ReviewSec>
             )}
         </div>);
 };
 
 Reviews.propTypes = {
-    to: PropTypes.string.isRequired
+    to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 }
