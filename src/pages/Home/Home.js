@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { fetchTrending } from 'services/api';
-import { MovieList } from 'components/MovieList/MovieList';
+import { MovieList } from 'components';
 import { Title } from './Home.styled';
 import { Wrapper } from 'components';
 

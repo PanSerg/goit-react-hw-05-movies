@@ -2,9 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMovieCast } from "services/api";
 import PropTypes from 'prop-types';
-import { CastList, Character, PhotoActor } from "./Cast.styled";
-import { Actor } from "./Cast.styled";
-import { NameActor } from "./Cast.styled";
+import { CastList, Character, PhotoActor, Actor, NameActor } from "components";
 
 export default function Cast () {
     const { movieId } = useParams();

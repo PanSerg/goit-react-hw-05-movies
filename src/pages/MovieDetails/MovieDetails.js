@@ -1,13 +1,16 @@
 import { useEffect, useState, useRef, Suspense } from 'react';
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 import { fetchMovieById } from 'services/api';
-import { Title } from 'pages/Home/Home.styled';
-import { Container, Section } from './MovieDetails.styled';
-import { Image } from './MovieDetails.styled';
-import { Wrapper } from 'components/Wrapper/Wrapper.styled';
-import { MovieCard } from './MovieDetails.styled';
-import { BackLink } from 'components/BackLink/BackLink';
-import { Loading } from 'components/Loading/Loading';
+import {
+  Container,
+  Section,
+  Image,
+  MovieCard,
+  Wrapper,
+  Loading,
+  BackLink,
+  Title
+} from 'components';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);

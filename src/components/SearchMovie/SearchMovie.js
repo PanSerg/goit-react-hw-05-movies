@@ -2,7 +2,7 @@ import React from "react";
 import { Formik } from "formik";
 import { BiSearchAlt } from 'react-icons/bi';
 import PropTypes from 'prop-types';
-import { SearchForm, SearchInput, SearchButton } from "./Search.styled";
+import { SearchForm, SearchInput, SearchButton } from "components";
 
 export function SearchMovie({ handleSearchInput }) {
   return (

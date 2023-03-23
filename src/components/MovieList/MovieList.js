@@ -1,9 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { useLocation } from "react-router-dom";
-import { MoviesList } from "./MovieList.styled";
-import { LinkStyled } from "./MovieList.styled";
-
+import { MoviesList, LinkStyled } from "./MovieList.styled";
 
 export const MovieList = ({ movieList, linkTo }) => {
     const location = useLocation();

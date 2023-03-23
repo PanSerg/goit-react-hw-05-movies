@@ -1,6 +1,6 @@
 import { FaArrowLeft } from 'react-icons/fa';
 import PropTypes from 'prop-types';
-import { GoBack } from './BackLink.styled';
+import { GoBack } from 'components';
 
 export function BackLink({to, children}) {
     return (
