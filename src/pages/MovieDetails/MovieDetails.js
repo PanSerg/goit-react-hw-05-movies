@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
 import { useParams, useLocation, Link, Outlet } from 'react-router-dom';
 import { fetchMovieById } from 'services/api';
 import { Title } from 'pages/Home/Home.styled';
@@ -66,9 +66,9 @@ const MovieDetails = () => {
           </li>
         </ul>
       </Section>
-      <Section fallback={<Loading />}>
+      <Suspense fallback={<Loading />}>
         <Outlet />
-      </Section>
+      </Suspense>
     </Wrapper>
   );
 };
