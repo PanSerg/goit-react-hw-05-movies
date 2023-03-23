@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { fetchMovieReviews } from "services/api";
 import { ReviewSec } from "./Reviews.styled";
 
-export function Reviews() {
+export default function Reviews() {
     const { movieId } = useParams();
     const [reviews, setReviews] = useState([]);
 

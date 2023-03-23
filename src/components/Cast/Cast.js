@@ -6,7 +6,7 @@ import { CastList, Character, PhotoActor } from "./Cast.styled";
 import { Actor } from "./Cast.styled";
 import { NameActor } from "./Cast.styled";
 
-export function Cast () {
+export default function Cast () {
     const { movieId } = useParams();
     const [cast, setCast] = useState([]);
 
