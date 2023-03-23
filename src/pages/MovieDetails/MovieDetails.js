@@ -4,9 +4,10 @@ import { fetchMovieById } from 'services/api';
 import { Title } from 'pages/Home/Home.styled';
 import { Container, Section } from './MovieDetails.styled';
 import { Image } from './MovieDetails.styled';
-import { Wrapper } from 'components/Wrapper.styled';
+import { Wrapper } from 'components/Wrapper/Wrapper.styled';
 import { MovieCard } from './MovieDetails.styled';
 import { BackLink } from 'components/BackLink/BackLink';
+import { Loading } from 'components/Loading/Loading';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -65,7 +66,7 @@ const MovieDetails = () => {
           </li>
         </ul>
       </Section>
-      <Section>
+      <Section fallback={<Loading />}>
         <Outlet />
       </Section>
     </Wrapper>

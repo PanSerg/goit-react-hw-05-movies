@@ -1,6 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { fetchMovieCast } from "services/api";
+import PropTypes from 'prop-types';
+import { CastList, Character, PhotoActor } from "./Cast.styled";
+import { Actor } from "./Cast.styled";
+import { NameActor } from "./Cast.styled";
 
 export function Cast () {
     const { movieId } = useParams();
@@ -15,19 +19,26 @@ export function Cast () {
     }, [movieId]);
 
     return (
-      <div>
-          <ul>
-            {cast.map(({ id, name, character, profile_path }) => (
-              <li key={id}>
-                {/* <img
-                  src={} alt={}
-                /> */}
-                    <h3>{name}</h3>
-                    <p>Character: </p>
-                    <p>{character}</p>
-              </li>
-            ))}
-          </ul>
-      </div>
+        <CastList>
+          {cast.map(({ id, name, character, profile_path }) => (
+            <Actor key={id}>
+              <PhotoActor
+                src={
+                  profile_path
+                    ? `https://image.tmdb.org/t/p/w300/${profile_path}`
+                    : `https://via.placeholder.com/250x375`
+                }
+                alt={name}
+              />
+              <NameActor>{name}</NameActor>
+              <Character>Character: </Character>
+              <Character>{character}</Character>
+            </Actor>
+          ))}
+        </CastList>
     );
+};
+
+Cast.propTypes = {
+  to: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 };

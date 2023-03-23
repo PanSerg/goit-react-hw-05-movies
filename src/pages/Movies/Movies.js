@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchMovieByName } from 'services/api';
 import { MovieList } from 'components/MovieList/MovieList';
 import { SearchMovie } from 'components/SearchMovie/SearchMovie';
-import { Wrapper } from 'components/Wrapper.styled';
+import { Wrapper } from 'components/Wrapper/Wrapper.styled';
 
 const Movies = () => {
   const [movieList, setMovieList] = useState([]);
