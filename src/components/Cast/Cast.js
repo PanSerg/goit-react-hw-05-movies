@@ -3,22 +3,19 @@ import { useState, useEffect } from "react";
 import { fetchMovieCast } from "services/api";
 
 export function Cast () {
-    const { castId } = useParams();
+    const { movieId } = useParams();
     const [cast, setCast] = useState([]);
 
     useEffect(() => {
         async function getMovieCast() {
-            const movieCast = await fetchMovieCast(castId);
+            const movieCast = await fetchMovieCast(movieId);
             setCast(movieCast);
         }
         getMovieCast();
-    }, [castId]);
+    }, [movieId]);
 
     return (
       <div>
-        {cast.length ? (
-          <p>Error</p>
-        ) : (
           <ul>
             {cast.map(({ id, name, character, profile_path }) => (
               <li key={id}>
@@ -31,7 +28,6 @@ export function Cast () {
               </li>
             ))}
           </ul>
-        )}
       </div>
     );
 };
