@@ -6,6 +6,7 @@ import { Container, Section } from './MovieDetails.styled';
 import { Image } from './MovieDetails.styled';
 import { Wrapper } from 'components/Wrapper.styled';
 import { MovieCard } from './MovieDetails.styled';
+import { BackLink } from 'components/BackLink/BackLink';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
@@ -31,7 +32,7 @@ const MovieDetails = () => {
 
   return (
     <Wrapper>
-      <div to={backLinkHref.current}>Go back</div>
+      <BackLink to={backLinkHref.current}>Go back</BackLink>
       <Section>
         <MovieCard>
           <Image

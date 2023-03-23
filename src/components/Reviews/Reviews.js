@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
-import { fetchMovieCast } from "services/api";
+import { fetchMovieReviews } from "services/api";
 import { ReviewSec } from "./Reviews.styled";
 
 export function Reviews() {
@@ -10,8 +10,8 @@ export function Reviews() {
 
     useEffect(() => {
         async function getMovieReviews() {
-            const movieCast = await fetchMovieCast(movieId);
-            setReviews(movieCast);
+            const movieReview = await fetchMovieReviews(movieId);
+            setReviews(movieReview);
         }
         getMovieReviews();
     }, [movieId]);
@@ -30,7 +30,8 @@ export function Reviews() {
                     ))}
                 </ReviewSec>
             )}
-        </div>);
+        </div>
+    );
 };
 
 Reviews.propTypes = {

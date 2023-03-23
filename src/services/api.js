@@ -15,8 +15,8 @@ export async function fetchMovieByName(query) {
     return response.data.results;
 };
 
-export async function fetchMovieById(movieId) {
-    const response = await axios.get(`/movie/${movieId}`);
+export async function fetchMovieById(id) {
+    const response = await axios.get(`/movie/${id}`);
     return response.data;
 };
 
@@ -26,8 +26,8 @@ export async function fetchMovieCast(id) {
     return cast;
 };
 
-export async function fetchMovieReviews(movieId) {
-    const response = await axios.get(`/movie/${movieId}/reviews`);
+export async function fetchMovieReviews(id) {
+    const response = await axios.get(`/movie/${id}/reviews`);
     const cast = response.data.results;
     return cast;
 }
